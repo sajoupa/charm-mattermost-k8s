@@ -19,7 +19,8 @@ class MattermostK8sCharm(CharmBase):
 
     state = StoredState()
 
-    def __init__(self, *args):
+    def __init__(self, framework, key):
+        super().__init__(framework, key)
         self.framework.observe(self.on.start, self.configure_pod)
         self.framework.observe(self.on.config_changed, self.configure_pod)
         self.framework.observe(self.on.upgrade_charm, self.configure_pod)
@@ -39,11 +40,11 @@ class MattermostK8sCharm(CharmBase):
                     'protocol': 'TCP',
                 }],
                 'env': {
-                    'MATTERMOST_HTTPD_LISTEN_PORT': int(self.framework.model.config['mattermost_port']),
-                    'DB_HOST': int(self.framework.model.config['pg_db_host']),
-                    'DB_PORT_NUMBER': int(self.framework.model.config['pg_db_port']),
-                    'MM_USERNAME': int(self.framework.model.config['pg_user']),
-                    'MM_PASSWORD': int(self.framework.model.config['pg_password']),
+                    'MATTERMOST_HTTPD_LISTEN_PORT': int(config['mattermost_port']),
+                    'DB_HOST': config['pg_db_host'],
+                    'DB_PORT_NUMBER': int(config['pg_db_port']),
+                    'MM_USERNAME': config['pg_user'],
+                    'MM_PASSWORD': config['pg_password'],
                 },
             }]
         })
