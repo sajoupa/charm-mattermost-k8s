@@ -1,0 +1,26 @@
+options:
+    mattermost_image:
+        type: string
+        description: The path for the mattermost docker image.
+        default: 'mattermost:latest'
+    mattermost_port:
+        type: int
+        description: The port number for Mattermost to listen to.
+        default: 8000
+    pg_db_host:
+        type: string
+        description: The hostname or IP of the postgresql backend.
+        default: ''
+    pg_db_port:
+        type: int
+        description: The port number for the postgresql backend.
+        default: 5432
+    pg_user:
+        type: string
+        description: The postgresql user.
+        default: 'mattermost'
+    pg_password:
+        type: string
+        description: The postgresql password.
+        default: ''
+        
