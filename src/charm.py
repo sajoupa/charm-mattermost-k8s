@@ -46,7 +46,7 @@ class MattermostK8sCharm(CharmBase):
                     'containerPort': int(self.framework.model.config['mattermost_port']),
                     'protocol': 'TCP',
                 }],
-                'env': {
+                'config': {
                     'MATTERMOST_HTTPD_LISTEN_PORT': int(config['mattermost_port']),
                     'DB_HOST': config['pg_db_host'],
                     'DB_PORT_NUMBER': int(config['pg_db_port']),
