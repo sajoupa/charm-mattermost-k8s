@@ -1,8 +1,4 @@
 options:
-    mattermost_image:
-        type: string
-        description: The path for the mattermost docker image.
-        default: 'mattermost:latest'
     mattermost_port:
         type: int
         description: The port number for Mattermost to listen to.
