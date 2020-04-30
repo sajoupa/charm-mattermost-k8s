@@ -53,6 +53,7 @@ class MattermostK8sCharm(CharmBase):
                     'MM_USERNAME': config['pg_user'],
                     'MM_PASSWORD': config['pg_password'],
                     'MM_ENABLEOPENSERVER': config['open_server'],
+                    'MM_ENABLEUPLOADS': config['enable_plugin_uploads'],
                 },
             }]
         })
