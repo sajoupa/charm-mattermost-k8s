@@ -38,7 +38,7 @@ Notes for deploying a test setup locally using microk8s:
     microk8s.reset  # Warning! Clean slate!
     microk8s.enable dns dashboard registry storage
     microk8s.status --wait-ready
-    microk8s.config | juju add-k8s myk8s
+    microk8s.config | juju add-k8s myk8s --client
 
     # Build your Mattermost image
     docker build -f mattermost-dockerfile.yaml -t localhost:32000/mattermost .
