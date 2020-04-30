@@ -3,6 +3,10 @@ options:
         type: int
         description: The port number for Mattermost to listen to.
         default: 8000
+    open_server:
+        type: boolean
+        description: Allows users to sign up from the root page without an invite
+        default: false
     pg_db_host:
         type: string
         description: The hostname or IP of the postgresql backend.

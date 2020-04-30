@@ -52,6 +52,7 @@ class MattermostK8sCharm(CharmBase):
                     'DB_PORT_NUMBER': int(config['pg_db_port']),
                     'MM_USERNAME': config['pg_user'],
                     'MM_PASSWORD': config['pg_password'],
+                    'MM_ENABLEOPENSERVER': config['open_server'],
                 },
             }]
         })
